@@ -26,12 +26,19 @@ public class jpaMain {
 //            findMember.setName("helloJPA");
 //            em.remove(findMember);
 
-            //멤버 객체를 대상으로 쿼리를 구성 (JPQAL)
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                    .getResultList();
-            for (Member member : result) {
-                System.out.println("member.getName() = " + member.getName());
-            }
+//            //멤버 객체를 대상으로 쿼리를 구성 (JPQL)
+//            List<Member> result = em.createQuery("select m from Member as m", Member.class)
+//                    .getResultList();
+//            for (Member member : result) {
+//                System.out.println("member.getName() = " + member.getName());
+//            }
+
+            // 비영속
+            Member member = new Member();
+            member.setId(10L);
+            member.setName("회원1");
+            //객체를 저장한 상태(영속)
+            em.persist(member);
 
             tx.commit();
         } catch (Exception e){
