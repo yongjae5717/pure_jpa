@@ -5,6 +5,8 @@ import javax.persistence.*;
 @Entity
 // Join 전략
 @Inheritance(strategy = InheritanceType.JOINED)
+// INSERT DTYPE
+@DiscriminatorColumn
 public class Item {
     @Id
     @GeneratedValue
