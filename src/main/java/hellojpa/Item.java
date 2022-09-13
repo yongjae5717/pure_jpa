@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 // Join 전략
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 // INSERT DTYPE
 @DiscriminatorColumn
 public class Item {
