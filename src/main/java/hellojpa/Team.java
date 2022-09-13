@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Team {
+@MappedSuperclass
+public class Team extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "team_id", nullable = false)
